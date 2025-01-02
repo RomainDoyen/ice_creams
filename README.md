@@ -1,16 +1,38 @@
 # ice_creams
 
-
+A mobile application for an ice cream store.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- __Home__: Presentation of the store with a futuristic design and light animations.
+- __Menu__: List of ice creams on offer (images, names, prices).
+- __Map__: Location of the store on OpenStreetMap.
+- __About__: Information about the store and its concept.
+- __Contact (optional)__: Simple form or information to contact the store.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Technologies
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- __Framework__: Flutter.
+- __Map library__: flutter_map (compatible with OpenStreetMap).
+
+## Project structure
+
+```bash
+lib/
+  |- main.dart
+  |- screens/
+      |- home_screen.dart
+      |- menu_screen.dart
+      |- map_screen.dart
+      |- about_screen.dart
+  |- widgets/
+      |- ice_cream_card.dart
+  |- assets/
+      |- images/
+      |- fonts/
+      |- data/
+          |- menu.json
+```
+
