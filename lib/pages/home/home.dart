@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creams/pages/home/widgets/category.dart';
 import 'package:ice_creams/pages/home/widgets/header.dart';
 import 'package:ice_creams/pages/home/widgets/search.dart';
 
@@ -24,8 +25,9 @@ class HomePage extends StatelessWidget {
             ),
             Column(
               children: [
-                HeaderSection(),
-                SearchSection(),
+                const HeaderSection(),
+                const SearchSection(),
+                CategorySection(),
               ],
             )
           ],
