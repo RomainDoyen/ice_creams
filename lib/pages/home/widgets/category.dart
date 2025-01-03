@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creams/pages/home/widgets/popular.dart';
 
 class CategorySection extends StatelessWidget {
   CategorySection({super.key});
@@ -88,6 +89,7 @@ class CategorySection extends StatelessWidget {
               ),
             ),
           ),
+          PopularIceCream(),
         ],
       ),
     );
