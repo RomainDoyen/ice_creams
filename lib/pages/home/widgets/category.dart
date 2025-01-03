@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creams/pages/home/widgets/newest.dart';
 import 'package:ice_creams/pages/home/widgets/popular.dart';
 
 class CategorySection extends StatelessWidget {
@@ -30,7 +31,7 @@ class CategorySection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      height: 1000,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -90,6 +91,18 @@ class CategorySection extends StatelessWidget {
             ),
           ),
           PopularIceCream(),
+          Container(
+            margin: const EdgeInsets.only(left: 25, top: 20),
+            child: const Text(
+              'Newtest Ice Cream',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+          ),
+          NewestIceCream(),
         ],
       ),
     );

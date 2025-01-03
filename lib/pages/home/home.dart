@@ -39,6 +39,7 @@ class HomePage extends StatelessWidget {
 
   Widget NavigationBar() {
     return Container(
+      color: Colors.white,
       child: Container(
         decoration: BoxDecoration(
           boxShadow: [
