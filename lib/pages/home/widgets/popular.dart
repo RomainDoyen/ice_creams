@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ice_creams/models/icecream.dart';
+import 'package:ice_creams/pages/detail/detail.dart';
 
 class PopularIceCream extends StatelessWidget {
   PopularIceCream({super.key});
@@ -14,7 +15,9 @@ class PopularIceCream extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
         itemBuilder: ((context, index) => GestureDetector(
-          onTap: (() => print('on tap')),
+          onTap: (() => Navigator.of(context).push(MaterialPageRoute(
+            builder: ((context) => DetailPage(iceCream: icecreams[index])),
+          ))),
           child: Card(
             elevation: 5,
             shape: RoundedRectangleBorder(
