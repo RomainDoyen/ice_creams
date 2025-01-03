@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creams/pages/home/widgets/header.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,6 +21,11 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            Column(
+              children: [
+                HeaderSection(),
+              ],
+            )
           ],
         ),
       ),
