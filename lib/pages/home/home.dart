@@ -10,13 +10,15 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Stack(
           children: [
-            Transform(
-              transform: Matrix4.identity()..rotateZ(20),
-              origin: const Offset(150, 50),
-              child: Image.asset(
-                'assets/images/ice_cream.png',
-                width: 200
-              )
+            Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 50),
+                child: Image.asset(
+                  'assets/images/ice_cream.png',
+                  width: 150,
+                ),
+              ),
             ),
           ],
         ),
