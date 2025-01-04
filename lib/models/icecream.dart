@@ -31,9 +31,9 @@ class IceCream {
           'assets/icons/chocolate.png',
           'Chocolate',
           [
-            'assets/images/chocolate.jpg',
-            'assets/images/chocolate.jpg',
-            'assets/images/chocolate.jpg',
+            'assets/images/chocolat.jpg',
+            'assets/images/chocolat.jpg',
+            'assets/images/chocolat.jpg',
           ],
           9.23,
           4.2,
