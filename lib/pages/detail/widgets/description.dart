@@ -18,8 +18,8 @@ class DescriptionSection extends StatelessWidget {
         trimLines: 2,
         colorClickableText: Colors.deepPurple,
         trimMode: TrimMode.Line,
-        trimCollapsedText: 'Plus',
-        trimExpandedText: 'Réduire',
+        trimCollapsedText: 'More',
+        trimExpandedText: 'Less',
         style: const TextStyle(
           fontSize: 16,
           color: Colors.black,
