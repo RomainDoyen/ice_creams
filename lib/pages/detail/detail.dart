@@ -21,7 +21,7 @@ class DetailPage extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: IceCreamInfo(iceCream: iceCream),
+            child: IceCreamInfo(iceCream),
           )
         ],
       ),
