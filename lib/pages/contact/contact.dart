@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creams/pages/contact/widgets/maps.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
@@ -7,12 +8,12 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color(0xFFC8B7F7),
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Text('Contact Page'),
-          ],
-        ),
+      body: Column(
+        children: [
+          Expanded(
+            child: MapsBaseWidget(),
+          ),
+        ],
       ),
     );
   }
