@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creams/pages/basket/basket.dart';
 import 'package:ice_creams/pages/home/widgets/category.dart';
 import 'package:ice_creams/pages/home/widgets/header.dart';
 import 'package:ice_creams/pages/home/widgets/search.dart';
@@ -38,6 +39,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     ),
+    const BasketPage(),
     const ContactPage(),
   ];
 
@@ -88,13 +90,20 @@ class _HomePageState extends State<HomePage> {
                   size: 50,
                 ),
               ),
+              const BottomNavigationBarItem(
+                label: 'Basket',
+                icon: Icon(
+                  Icons.shopping_basket_rounded,
+                  size: 50,
+                ),
+              ),
               BottomNavigationBarItem(
                 label: "Contact",
                 icon: Container(
-                  margin: const EdgeInsets.all(5),
-                  padding: const EdgeInsets.all(5),
+                  margin: const EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(2),
                   child: const Icon(
-                    Icons.contacts_rounded,
+                    Icons.contact_phone_rounded,
                     size: 40,
                   ),
                 ),
