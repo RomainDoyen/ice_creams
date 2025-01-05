@@ -12,7 +12,18 @@ class HeaderDetailSection extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Row(
         children: [
-          Image.asset(iceCream.icon, width: 80),
+          Container(
+            width: 80,
+            height: 80,
+            decoration: BoxDecoration(
+              color: Colors.grey.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Image.asset(iceCream.icon),
+            ),
+          ),
           const SizedBox(width: 15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
