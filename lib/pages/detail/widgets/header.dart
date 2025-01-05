@@ -25,42 +25,64 @@ class HeaderDetailSection extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 15),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                iceCream.name,
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                iceCream.type,
-                style: const TextStyle(
-                  color: Colors.grey,
-                ),
-              ),
-              const SizedBox(height: 5),
-              Row(
-                children: [
-                  const Icon(
-                    Icons.star,
-                    color: Colors.yellow,
-                    size: 15,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  iceCream.name,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-                  Text(
-                    iceCream.rating.toString(),
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12,
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  iceCream.type,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Row(
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                          size: 15,
+                        ),
+                        Text(
+                          iceCream.rating.toString(),
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
                     ),
-                  )
-                ],
-              ),
-            ],
-          )
+                    const Spacer(),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 5),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF5F67EA),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        '${iceCream.price} \$',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
