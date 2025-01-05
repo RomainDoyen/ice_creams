@@ -60,9 +60,11 @@ class _MapsBaseWidgetState extends State<MapsBaseWidget> {
                       builder: (context) => AlertDialog(
                         title: Text(shop["name"]),
                         content: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text("Address: ${shop["address"]}"),
+                            const SizedBox(height: 10),
                             Text("Phone: ${shop["phone"]}"),
                           ],
                         ),
