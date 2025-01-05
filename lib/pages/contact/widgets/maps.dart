@@ -33,6 +33,18 @@ class _MapsBaseWidgetState extends State<MapsBaseWidget> {
               ),
             ],
           ),
+          MarkerLayer(
+            markers: [
+              Marker(
+                point: LatLng(-21.114533, 55.532062499999995),
+                width: 80,
+                height: 80,
+                child: Image.asset(
+                  'assets/images/marker_ice_cream.png'
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
