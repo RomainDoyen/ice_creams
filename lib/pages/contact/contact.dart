@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ice_creams/pages/contact/widgets/maps.dart';
+import 'package:ice_creams/pages/contact/widgets/map.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
