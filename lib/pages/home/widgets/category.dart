@@ -2,29 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:ice_creams/pages/home/widgets/newest.dart';
 import 'package:ice_creams/pages/home/widgets/popular.dart';
 
-class CategorySection extends StatelessWidget {
-  CategorySection({super.key});
+class CategorySection extends StatefulWidget {
+  const CategorySection({super.key});
+
+  @override
+  _CategorySectionState createState() => _CategorySectionState();
+}
+
+class _CategorySectionState extends State<CategorySection> {
+  String _selectedCategory = 'All';
 
   final categories = [
     {
-      'title': 'All',
-      'icon': 'assets/icons/list.png',
+      'title': 'All', 
+      'icon': 'assets/icons/list.png'
     },
     {
-      'title': 'Chocolate',
-      'icon': 'assets/icons/chocolate.png',
+      'title': 'Chocolate', 
+      'icon': 'assets/icons/chocolate.png'
     },
     {
-      'title': 'Lemon',
-      'icon': 'assets/icons/citrus.png',
+      'title': 'Lemon', 
+      'icon': 'assets/icons/citrus.png'
     },
     {
-      'title': 'Apple',
-      'icon': 'assets/icons/apple.png',
+      'title': 'Apple', 
+      'icon': 'assets/icons/apple.png'
     },
     {
-      'title': 'Strawberry',
-      'icon': 'assets/icons/strawberry.png',
+      'title': 'Strawberry', 
+      'icon': 'assets/icons/strawberry.png'
     },
   ];
 
@@ -50,30 +57,44 @@ class CategorySection extends StatelessWidget {
               separatorBuilder: (context, index) => const SizedBox(width: 10),
               itemBuilder: (context, index) {
                 final category = categories[index];
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 60,
-                      height: 60,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Center(
-                        child: Image.asset(
-                          category['icon'] as String,
-                          width: 30,
-                          height: 30,
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _selectedCategory = category['title'] as String;
+                    });
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            category['icon'] as String,
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      category['title'] as String,
-                      style: const TextStyle(color: Colors.grey),
-                    ),
-                  ],
+                      const SizedBox(height: 10),
+                      Text(
+                        category['title'] as String,
+                        style: TextStyle(
+                          color: _selectedCategory == category['title']
+                              ? const Color(0xFFBB71B4)
+                              : Colors.grey,
+                          fontWeight: _selectedCategory == category['title']
+                              ? FontWeight.bold
+                              : FontWeight.normal,
+                        ),
+                      ),
+                    ],
+                  ),
                 );
               },
             ),
@@ -89,11 +110,11 @@ class CategorySection extends StatelessWidget {
               ),
             ),
           ),
-          PopularIceCream(),
+          PopularIceCream(category: _selectedCategory),
           Container(
             margin: const EdgeInsets.only(left: 25, top: 20),
             child: const Text(
-              'Newtest Ice Cream',
+              'Newest Ice Cream',
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -101,7 +122,7 @@ class CategorySection extends StatelessWidget {
               ),
             ),
           ),
-          NewestIceCream(),
+          NewestIceCream(category: _selectedCategory),
         ],
       ),
     );

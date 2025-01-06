@@ -2,17 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:ice_creams/models/icecream.dart';
 import 'package:ice_creams/pages/detail/detail.dart';
 
-class NewestIceCream extends StatelessWidget {
-  NewestIceCream({super.key});
+class NewestIceCream extends StatefulWidget {
+  final String category;
 
-  final List<IceCream> icecreams = IceCream.icecreams();
+  const NewestIceCream({super.key, required this.category});
+
+  @override
+  _NewestIceCreamState createState() => _NewestIceCreamState();
+}
+
+class _NewestIceCreamState extends State<NewestIceCream> {
+  late List<IceCream> icecreams;
+
+  @override
+  void initState() {
+    super.initState();
+    icecreams = IceCream.icecreams();
+  }
+
+  List<IceCream> filterIceCreams(String category) {
+    if (category == 'All') {
+      return icecreams;
+    } else {
+      return icecreams.where((icecream) => icecream.type == category).toList();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    List<IceCream> filteredIceCreams = filterIceCreams(widget.category);
+
     return Container(
       padding: const EdgeInsets.all(25),
       child: Column(
-        children: icecreams.map((icecream) {
+        children: filteredIceCreams.map((icecream) {
           return GestureDetector(
             onTap: () {
               Navigator.push(
