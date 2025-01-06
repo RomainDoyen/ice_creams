@@ -2,17 +2,25 @@ import 'package:flutter/foundation.dart';
 import 'package:ice_creams/models/icecream.dart';
 
 class BasketModel extends ChangeNotifier {
-  final List<IceCream> _items = [];
+  final Map<IceCream, int> _items = {};
 
-  List<IceCream> get items => _items;
+  Map<IceCream, int> get items => _items;
 
   void addToBasket(IceCream iceCream) {
-    _items.add(iceCream);
-    notifyListeners(); // Notifie les widgets que le panier a changé
+    if (_items.containsKey(iceCream)) {
+      _items[iceCream] = _items[iceCream]! + 1;
+    } else {
+      _items[iceCream] = 1;
+    }
+    notifyListeners();
   }
 
   void removeFromBasket(IceCream iceCream) {
-    _items.remove(iceCream);
+    if (_items.containsKey(iceCream) && _items[iceCream]! > 1) {
+      _items[iceCream] = _items[iceCream]! - 1;
+    } else {
+      _items.remove(iceCream);
+    }
     notifyListeners();
   }
 }

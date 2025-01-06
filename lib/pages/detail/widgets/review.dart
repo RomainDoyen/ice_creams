@@ -75,7 +75,6 @@ class ReviewSection extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                // Ajouter le produit au panier
                 final basket = Provider.of<BasketModel>(context, listen: false);
                 basket.addToBasket(iceCream);
 
