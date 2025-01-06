@@ -13,90 +13,124 @@ class BasketPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Basket')),
       body: basket.items.isEmpty
           ? const Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.add_shopping_cart_rounded,
-                  size: 100,
-                  color: Colors.deepPurple,
-                ),
-                Text(
-                  'Basket is empty !',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.add_shopping_cart_rounded,
+                    size: 100,
+                    color: Colors.deepPurple,
                   ),
-                ),
-              ],
-            ),
-          )
-          : ListView.builder(
-              itemCount: basket.items.length,
-              itemBuilder: (context, index) {
-                final item = basket.items.keys.elementAt(index);
-                final quantity = basket.items[item]!;
-
-                return ListTile(
-                  leading: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      item.bgImageUrl,
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
-                        return const Icon(
-                          Icons.image_not_supported_rounded,
-                          size: 60,
-                          color: Colors.grey,
-                        );
-                      },
-                    ),
-                  ),
-                  title: Text(
-                    item.name,
-                    style: const TextStyle(
+                  Text(
+                    'Basket is empty !',
+                    style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple
+                      color: Colors.deepPurple,
                     ),
                   ),
-                  subtitle: Text(
-                    'Price: \$${item.price.toStringAsFixed(2)} x $quantity = \$${(item.price * quantity).toStringAsFixed(2)}',
-                  ),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      IconButton(
-                        icon: const Icon(
-                          Icons.remove_circle,
-                          color: Colors.red,
-                          size: 35,
+                ],
+              ),
+            )
+          : Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: basket.items.length,
+                    itemBuilder: (context, index) {
+                      final item = basket.items.keys.elementAt(index);
+                      final quantity = basket.items[item]!;
+
+                      return ListTile(
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            item.bgImageUrl,
+                            width: 100,
+                            height: 100,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) {
+                              return const Icon(
+                                Icons.image_not_supported_rounded,
+                                size: 60,
+                                color: Colors.grey,
+                              );
+                            },
+                          ),
                         ),
-                        onPressed: () {
-                          basket.removeFromBasket(item);
-                        },
+                        title: Text(
+                          item.name,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepPurple,
+                          ),
+                        ),
+                        subtitle: Text(
+                          'Price: \$${item.price.toStringAsFixed(2)} x $quantity = \$${(item.price * quantity).toStringAsFixed(2)}',
+                        ),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            IconButton(
+                              icon: const Icon(
+                                Icons.remove_circle,
+                                color: Colors.red,
+                                size: 35,
+                              ),
+                              onPressed: () {
+                                basket.removeFromBasket(item);
+                              },
+                            ),
+                            Text(
+                              '$quantity',
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                            IconButton(
+                              icon: const Icon(
+                                Icons.add_circle,
+                                color: Colors.green,
+                                size: 35,
+                              ),
+                              onPressed: () {
+                                basket.addToBasket(item);
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: const BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Total:',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                       Text(
-                        '$quantity',
-                        style: const TextStyle(fontSize: 16),
-                      ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.add_circle,
-                          color: Colors.green,
-                          size: 35,
+                        '\$${basket.totalPrice.toStringAsFixed(2)}',
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
-                        onPressed: () {
-                          basket.addToBasket(item);
-                        },
                       ),
                     ],
                   ),
-                );
-              },
+                ),
+              ],
             ),
     );
   }

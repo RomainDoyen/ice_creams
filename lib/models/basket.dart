@@ -6,6 +6,10 @@ class BasketModel extends ChangeNotifier {
 
   Map<IceCream, int> get items => _items;
 
+  get totalPrice => _items.entries
+      .map((e) => e.key.price * e.value)
+      .reduce((value, element) => value + element);
+
   void addToBasket(IceCream iceCream) {
     if (_items.containsKey(iceCream)) {
       _items[iceCream] = _items[iceCream]! + 1;
