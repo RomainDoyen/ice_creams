@@ -70,7 +70,7 @@ class NewestIceCream extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 5),
                           decoration: BoxDecoration(
-                            color: const Color(0xFF5F67EA),
+                            color: const Color(0xFFBB71B4),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text(

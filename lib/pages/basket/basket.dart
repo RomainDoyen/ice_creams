@@ -19,14 +19,14 @@ class BasketPage extends StatelessWidget {
                   Icon(
                     Icons.add_shopping_cart_rounded,
                     size: 100,
-                    color: Colors.deepPurple,
+                    color: Color(0xFFBB71B4),
                   ),
                   Text(
                     'Basket is empty !',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple,
+                      color: Color(0xFFBB71B4),
                     ),
                   ),
                 ],
@@ -63,7 +63,7 @@ class BasketPage extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.deepPurple,
+                            color: Color(0xFFBB71B4),
                           ),
                         ),
                         subtitle: Text(
@@ -105,7 +105,7 @@ class BasketPage extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: const BoxDecoration(
-                    color: Colors.deepPurple,
+                    color: Color(0xFFBB71B4),
                     borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
                   ),
                   child: Row(

@@ -65,7 +65,7 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
               alignment: Alignment.center,
               width: 60,
               height: 5,
-              color: const Color(0xFF5F67EA),
+              color: const Color(0xFFBB71B4),
             ),
           ),
         )

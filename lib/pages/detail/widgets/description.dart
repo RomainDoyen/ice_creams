@@ -16,7 +16,7 @@ class DescriptionSection extends StatelessWidget {
       child: ReadMoreText(
         iceCream.description,
         trimLines: 2,
-        colorClickableText: Colors.deepPurple,
+        colorClickableText: const Color(0xFFBB71B4),
         trimMode: TrimMode.Line,
         trimCollapsedText: 'More',
         trimExpandedText: 'Less',

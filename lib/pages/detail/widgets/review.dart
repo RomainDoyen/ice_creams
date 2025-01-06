@@ -69,7 +69,7 @@ class ReviewSection extends StatelessWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 elevation: 0,
-                backgroundColor: const Color(0xFF5F67EA),
+                backgroundColor: const Color(0xFFBB71B4),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),

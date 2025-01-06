@@ -19,7 +19,7 @@ class ShopDialog extends StatelessWidget {
         name,
         style: const TextStyle(
           fontSize: 20,
-          color: Colors.deepPurple,
+          color: Color(0xFFBB71B4),
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -71,7 +71,7 @@ class ShopDialog extends StatelessWidget {
       actions: [
         TextButton(
           style: ButtonStyle(
-            backgroundColor: WidgetStateProperty.all(Colors.deepPurple),
+            backgroundColor: WidgetStateProperty.all(const Color(0xFFBB71B4)),
             foregroundColor: WidgetStateProperty.all(Colors.white),
           ),
           onPressed: () => Navigator.pop(context),

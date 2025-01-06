@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                 _currentIndex = index;
               });
             },
-            selectedItemColor: const Color(0xFF5F67EA),
+            selectedItemColor: const Color(0xFFBB71B4),
             selectedFontSize: 12,
             unselectedFontSize: 12,
             unselectedItemColor: Colors.grey.withOpacity(0.7),
