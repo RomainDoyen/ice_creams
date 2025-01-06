@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creams/models/basket.dart';
 import 'package:ice_creams/models/icecream.dart';
+import 'package:provider/provider.dart';
 
 class ReviewSection extends StatelessWidget {
 
@@ -72,7 +74,18 @@ class ReviewSection extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                // Ajouter le produit au panier
+                final basket = Provider.of<BasketModel>(context, listen: false);
+                basket.addToBasket(iceCream);
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('${iceCream.name} added to basket !'),
+                    duration: const Duration(seconds: 2),
+                  ),
+                );
+              },
               child: const Text(
                 'Command now',
                 style: TextStyle(
