@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creams/pages/home/controller/search_controller.dart';
 import 'package:ice_creams/pages/home/home.dart';
 import 'package:ice_creams/models/basket.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => BasketModel(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => BasketModel()),
+        ChangeNotifierProvider(create: (context) => SearchControllerIceCream()),
+      ],
       child: const MyApp(),
-    ),
-    // const MyApp()
+    )
   );
 }
 
