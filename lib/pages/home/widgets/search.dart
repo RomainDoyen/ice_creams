@@ -49,25 +49,46 @@ class SearchSection extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(15),
             ),
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: searchController.searchResults(items).length,
-              itemBuilder: (context, index) {
-                final result = searchController.searchResults(items)[index];
-                return ListTile(
-                  leading: Image.asset(
-                    result.bgImageUrl,
-                    width: 40,
-                    height: 40,
-                  ),
-                  title: Text(result.name),
-                  subtitle: Text('\$${result.price.toStringAsFixed(2)}'),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailPage(iceCream: result),
+            child: Builder(
+              builder: (context) {
+                final results = searchController.searchResults(items);
+                if (results.isEmpty) {
+                  return const Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      child: Text(
+                        'No ice creams found. Please try a different search.',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontStyle: FontStyle.italic,
+                        ),
                       ),
+                    ),
+                  );
+                }
+                return ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: results.length,
+                  itemBuilder: (context, index) {
+                    final result = results[index];
+                    return ListTile(
+                      leading: Image.asset(
+                        result.bgImageUrl,
+                        width: 40,
+                        height: 40,
+                      ),
+                      title: Text(result.name),
+                      subtitle: Text('\$${result.price.toStringAsFixed(2)}'),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                DetailPage(iceCream: result),
+                          ),
+                        );
+                      },
                     );
                   },
                 );
