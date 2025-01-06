@@ -39,18 +39,21 @@ class BasketPage extends StatelessWidget {
                 final quantity = basket.items[item]!;
 
                 return ListTile(
-                  leading: Image.asset(
-                    item.bgImageUrl,
-                    width: 60,
-                    height: 60,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) {
-                      return const Icon(
-                        Icons.image_not_supported_rounded,
-                        color: Colors.grey,
-                        size: 60,
-                      );
-                    },
+                  leading: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      item.bgImageUrl,
+                      width: 100,
+                      height: 100,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(
+                          Icons.image_not_supported_rounded,
+                          size: 60,
+                          color: Colors.grey,
+                        );
+                      },
+                    ),
                   ),
                   title: Text(
                     item.name,
