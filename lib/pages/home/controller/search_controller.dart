@@ -11,8 +11,18 @@ class SearchControllerIceCream with ChangeNotifier {
   }
 
   List<IceCream> searchResults(List<IceCream> items) {
+
+    if (_query.isEmpty) {
+      return [];
+    }
+
     return items
         .where((item) => item.name.toLowerCase().contains(_query.toLowerCase()))
         .toList();
+  }
+
+  void clearQuery() {
+    _query = '';
+    notifyListeners();
   }
 }
