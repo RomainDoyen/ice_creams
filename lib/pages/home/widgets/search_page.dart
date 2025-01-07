@@ -15,7 +15,6 @@ class SearchPage extends StatelessWidget {
     return PopScope(
       onPopInvoked: (didPop) {
         if (didPop) {
-          // Réinitialisez l'état uniquement si le pop a réussi
           searchController.clearQuery();
         }
       },
