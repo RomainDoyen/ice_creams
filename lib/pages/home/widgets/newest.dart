@@ -93,12 +93,33 @@ class _NewestIceCreamState extends State<NewestIceCream> {
                                   ),
                                 ),
                                 const SizedBox(height: 2),
-                                const Row(
-                                  children: [
-                                    Icon(Icons.star,
-                                        color: Colors.yellow, size: 15),
-                                  ],
-                                )
+                                Row(
+                                  children: List.generate(
+                                    5,
+                                    (index) {
+                                      if (index < icecream.rating.floor()) {
+                                        return const Icon(
+                                          Icons.star,
+                                          color: Color(0xFFCAA13D),
+                                          size: 20,
+                                        );
+                                      } else if (index == icecream.rating.floor() 
+                                        && icecream.rating % 1 != 0) {
+                                        return const Icon(
+                                          Icons.star_half,
+                                          color: Color(0xFFCAA13D),
+                                          size: 20,
+                                        );
+                                      } else {
+                                        return const Icon(
+                                          Icons.star_border,
+                                          color: Color(0xFFCAA13D),
+                                          size: 20,
+                                        );
+                                      }
+                                    }
+                                  ),
+                                ),
                               ],
                             ),
                             Container(
