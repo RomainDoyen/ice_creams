@@ -109,7 +109,7 @@ class _NewestIceCreamState extends State<NewestIceCream> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Text(
-                                '${icecream.price} \$',
+                                '\$ ${icecream.price}',
                                 style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 12,
