@@ -23,6 +23,31 @@ class IceCream {
     this.description,
   );
 
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! IceCream) return false;
+
+    return name == other.name && 
+    bgImageUrl == other.bgImageUrl &&
+    price == other.price &&
+    rating == other.rating &&
+    review == other.review &&
+    command == other.command &&
+    description == other.description;
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    name, 
+    bgImageUrl, 
+    price, 
+    rating, 
+    review, 
+    command, 
+    description
+  );
+
   static List<IceCream> icecreams() {
     return [
       IceCream(
