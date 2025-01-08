@@ -10,7 +10,20 @@ class BasketPage extends StatelessWidget {
     final basket = Provider.of<BasketModel>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Basket')),
+      appBar: AppBar(
+        title: const Text(
+          'Basket',
+          style: TextStyle(
+            color: Colors.white
+          ),
+        ),
+        backgroundColor: const Color(0xFFBB71B4),
+        leading: IconButton(
+          icon: const Icon(Icons.shopping_basket_rounded), 
+          onPressed: () { },
+          color: Colors.white,
+        ),
+      ),
       body: basket.items.isEmpty
           ? const Center(
               child: Column(
