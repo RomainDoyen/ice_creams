@@ -20,10 +20,18 @@ class SearchPage extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Search Ice Creams'),
+          title: const Text(
+            'Search Ice Creams',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
           backgroundColor: const Color(0xFFBB71B4),
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
@@ -95,12 +103,30 @@ class SearchPage extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final result = results[index];
                       return ListTile(
-                        leading: Image.asset(
-                          result.bgImageUrl,
-                          width: 40,
-                          height: 40,
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            result.bgImageUrl,
+                            width: 60,
+                            height: 60,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) {
+                              return const Icon(
+                                Icons.image_not_supported_rounded,
+                                size: 60,
+                                color: Colors.grey,
+                              );
+                            },
+                          ),
                         ),
-                        title: Text(result.name),
+                        title: Text(
+                          result.name,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFFBB71B4),
+                          ),
+                        ),
                         subtitle: Text('\$${result.price.toStringAsFixed(2)}'),
                         onTap: () {
                           Navigator.push(
