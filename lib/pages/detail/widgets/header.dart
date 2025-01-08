@@ -50,7 +50,7 @@ class HeaderDetailSection extends StatelessWidget {
                       children: [
                         const Icon(
                           Icons.star,
-                          color: Colors.yellow,
+                          color: Color(0xFFCAA13D),
                           size: 15,
                         ),
                         Text(
