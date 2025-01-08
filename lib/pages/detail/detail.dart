@@ -17,7 +17,7 @@ class DetailPage extends StatelessWidget {
             delegate: DetailSliverDelegate(
               iceCream: iceCream,
               expandedHeight: 360,
-              roundedContainerHeight: 30,
+              roundedContainerHeight: 30, 
             ),
           ),
           SliverToBoxAdapter(

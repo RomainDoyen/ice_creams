@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ice_creams/pages/basket/basket.dart';
 import 'package:ice_creams/pages/home/controller/search_controller.dart';
 import 'package:ice_creams/pages/home/home.dart';
 import 'package:ice_creams/models/basket.dart';
@@ -21,10 +22,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Ice Creams',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const HomePage(),
+      routes: {
+        '/basket': (context) => const BasketPage(),
+      },
     );
   }
 }

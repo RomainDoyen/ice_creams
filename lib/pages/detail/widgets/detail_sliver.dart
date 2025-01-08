@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ice_creams/models/icecream.dart';
 import 'package:ice_creams/models/basket.dart';
-import 'package:ice_creams/pages/basket/basket.dart';
 import 'package:provider/provider.dart';
 
 class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
@@ -54,9 +53,7 @@ class DetailSliverDelegate extends SliverPersistentHeaderDelegate {
           right: 25,
           child: GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const BasketPage(),
-              ));
+              Navigator.of(context).pushNamed('/basket');
             },
             child: Stack(
               alignment: Alignment.center,
