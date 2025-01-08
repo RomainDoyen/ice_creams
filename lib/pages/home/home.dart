@@ -29,10 +29,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Column(
+          const Column(
             children: [
-              const HeaderSection(),
-              const SearchSection(),
+              HeaderSection(),
+              SearchSection(),
               CategorySection(),
             ],
           )

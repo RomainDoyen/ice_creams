@@ -31,13 +31,11 @@ class PopularIceCream extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Container(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Hero(
-                  tag: filteredIcecreams[index].name,
-                  child: Image.asset(filteredIcecreams[index].bgImageUrl),
-                ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Hero(
+                tag: filteredIcecreams[index].name,
+                child: Image.asset(filteredIcecreams[index].bgImageUrl),
               ),
             ),
           ),
