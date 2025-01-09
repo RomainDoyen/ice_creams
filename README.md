@@ -19,6 +19,8 @@ Une application mobile moderne pour un magasin de crèmes glacées.
 
 ## Pour commencer
 
+Le fichier APK de l'application se trouve à la racine du projet sous le nom `IceCreams.apk`.
+
 Dans un terminal, cloner le projet avec la commande `git clone https://github.com/RomainDoyen/ice_creams.git`.
 
 Accédez au dossier `ice_creams`
