@@ -1,6 +1,6 @@
-# ice_creams
+<img src="./assets/ice_cream_logo.png" width="400" alt="Ice Cream Logo">
 
-A mobile application for an ice cream store.
+Une application mobile moderne pour un magasin de crèmes glacées.
 
 ## Getting Started
 
