@@ -52,23 +52,26 @@ flutter run main.dart
 | **rename_app**               | Paquet Flutter pour changer le nom de l'application sur toutes les plateformes.                       |
 | **provider**                 | Wrapper autour de `InheritedWidget` pour simplifier leur utilisation et améliorer la réutilisabilité. |
 
+## Design Systeme
 
-## Project structure
+![Design System](./assets/DesignSystem.png)
+
+## Wireframe
+
+![Wireframe](./assets/Wireframe.png)
+
+## Structure du projet
 
 ```bash
-lib/
-  |- main.dart
-  |- screens/
-      |- home_screen.dart
-      |- menu_screen.dart
-      |- map_screen.dart
-      |- about_screen.dart
-  |- widgets/
-      |- ice_cream_card.dart
-  |- assets/
-      |- images/
-      |- fonts/
-      |- data/
-          |- menu.json
+lib
+│   ├───models
+│   └───pages
+│       ├───basket
+│       ├───contact
+│       │   └───widgets
+│       ├───detail
+│       │   └───widgets
+│       └───home
+│           ├───controller
+│           └───widgets
 ```
-
