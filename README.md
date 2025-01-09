@@ -2,9 +2,33 @@
 
 Une application mobile moderne pour un magasin de crèmes glacées.
 
-## Getting Started
+## Captures d'écran
 
-## Features
+![](./assets/IceCreamsPhone.png)
+
+## Pour commencer
+
+Dans un terminal, cloner le projet avec la commande `git clone https://github.com/RomainDoyen/ice_creams.git`.
+
+Accédez au dossier `ice_creams`
+
+```bash
+cd ice_creams
+```
+
+Télécharger les dépendances 
+
+```bash
+flutter pub get
+```
+
+Avoir un émulateur installé sur sa machine ou bien brancher un smartphone physique et activer les options de développeur (Débogage USB, Installer via USB)
+
+Lancer la commande 
+
+```bash
+flutter run main.dart
+```
 
 - __Home__: Presentation of the store with a futuristic design and light animations.
 - __Menu__: List of ice creams on offer (images, names, prices).
