@@ -2,6 +2,17 @@
 
 Une application mobile moderne pour un magasin de crèmes glacées.
 
+# Table des matières
+
+- [Table des matières](#table-des-matières)
+  - [Captures d'écran](#captures-décran)
+  - [Pour commencer](#pour-commencer)
+  - [Fonctionnalités](#fonctionnalités)
+  - [Technologies et dépendances](#technologies-et-dépendances)
+  - [Design Systeme](#design-systeme)
+  - [Wireframe](#wireframe)
+  - [Structure du projet](#structure-du-projet)
+
 ## Captures d'écran
 
 ![](./assets/IceCreamsPhone.png)
