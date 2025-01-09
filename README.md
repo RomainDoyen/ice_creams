@@ -30,16 +30,28 @@ Lancer la commande
 flutter run main.dart
 ```
 
-- __Home__: Presentation of the store with a futuristic design and light animations.
-- __Menu__: List of ice creams on offer (images, names, prices).
-- __Map__: Location of the store on OpenStreetMap.
-- __About__: Information about the store and its concept.
-- __Contact (optional)__: Simple form or information to contact the store.
+## Fonctionnalités
 
-## Technologies
+| Fonctionnalité           | Description                                                                                                      |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| **Page d'Accueil**       | Présentation du magasin avec un design futuriste. Affichage des catégories, produits populaires et nouveautés.   |
+| **Détails d'un produit** | Page détaillée avec nom, catégorie, prix, images, description, notation, critiques, et bouton d'ajout au panier. |
+| **Contact**              | Emplacement des magasins sur OpenStreetMap avec popup affichant nom, adresse et numéro de téléphone.             |
+| **Panier**               | Gestion des produits ajoutés au panier (ajout, suppression) et visualisation du total à payer.                   |
+| **Barre de recherche**   | Recherche des produits et affichage des résultats sous forme de liste.                                           |
 
-- __Framework__: Flutter.
-- __Map library__: flutter_map (compatible with OpenStreetMap).
+## Technologies et dépendances
+
+| Technologie/Dépendance       | Description                                                                                           |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Framework**: Flutter       | Framework utilisé pour le développement de l'application mobile.                                      |
+| **Map library**: flutter_map | Bibliothèque de cartographie compatible avec OpenStreetMap, personnalisable et configurable.          |
+| **readmore**                 | Plugin permettant d'étendre et de réduire du texte avec options de stylisation.                       |
+| **latlong2**                 | Bibliothèque légère pour le calcul des latitudes et longitudes.                                       |
+| **flutter_map_marker_popup** | Plugin pour ajouter des popups sur les marqueurs de `flutter_map`.                                    |
+| **rename_app**               | Paquet Flutter pour changer le nom de l'application sur toutes les plateformes.                       |
+| **provider**                 | Wrapper autour de `InheritedWidget` pour simplifier leur utilisation et améliorer la réutilisabilité. |
+
 
 ## Project structure
 
